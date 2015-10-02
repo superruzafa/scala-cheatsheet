@@ -1,0 +1,16 @@
+digraph {
+  <%= File.open(File.dirname(__FILE__) + "/defaults.dot.inc", "rb").read %>
+
+  list1 [label = "<0>1|<1>2|<2>3|<3>4|<4>5"]
+  list2 [label = "<0>\"one\"|<1>\"two\"|<2>\"three\""]
+
+  zip [label = "<0>(1, \"one\")|<1>(2, \"two\")|<2>(3, \"three\")"]
+
+  list1:0 -> zip:0
+  list2:0 -> zip:0
+  list1:1 -> zip:1
+  list2:1 -> zip:1
+  list1:2 -> zip:2
+  list2:2 -> zip:2
+
+}

@@ -1,0 +1,37 @@
+digraph {
+  <%= File.open(File.dirname(__FILE__) + "/defaults.dot.inc", "rb").read %>
+
+  graph [
+    nodesep = 0.125
+  ]
+
+  pairlist [label = "<0>(1, \"one\")|<1>(2, \"two\")|<2>(3, \"three\")"]
+
+  {
+    rank = "same"
+    list1 [label = "<0>1|<1>2|<2>3"]
+    list2 [label = "<0>\"one\"|<1>\"two\"|<2>\"three\""]
+    node [
+      color = "transparent"
+      fontsize = 24
+      width = 0
+      margin = 0
+    ]
+    op [label = "("]
+    comma [label = ","]
+    cp [label = ")"]
+  }
+
+  pairlist:0:s -> list1:0:n
+  pairlist:1:s -> list1:1:n
+  pairlist:2:s -> list1:2:n
+  pairlist:0:s -> list2:0:n
+  pairlist:1:s -> list2:1:n
+  pairlist:2:s -> list2:2:n
+
+  edge [
+    dir = "none"
+    penwidth = 0
+  ]
+  op -> list1 -> comma -> list2 -> cp
+}

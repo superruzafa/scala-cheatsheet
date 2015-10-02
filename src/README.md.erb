@@ -18,3 +18,29 @@ def map[B](f: A ⇒ B): Seq[B]
 <%= includefile("map.scala") %>
 ```
 ![graphical map](images/map.png)
+
+
+
+### unzip
+
+Converts this collection of pairs into two collections of the first and second half of each pair.
+
+```scala
+def unzip[A1, A2](implicit asPair: (A) ⇒ (A1, A2)): (Seq[A1], Seq[A2])
+
+<%= includefile("unzip.scala") %>
+```
+![graphical unzip](images/unzip.png)
+
+
+
+### zip
+
+Returns a sequence formed from this sequence and another iterable collection by combining corresponding elements in pairs.
+
+```scala
+def zip[B](that: GenIterable[B]): Seq[(A, B)]
+
+<%= includefile("zip.scala") %>
+```
+![graphical zip](images/zip.png)
