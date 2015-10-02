@@ -1,0 +1,12 @@
+digraph {
+  <%= File.open(File.dirname(__FILE__) + "/defaults.dot.inc", "rb").read %>
+
+  list [label = "<0>83|<1>99|<2>97|<3>108|<4>97"]
+  mapped [label = "<0>\'S\'|<1>\'c\'|<2>\'a\'|<3>\'l\'|<4>\'a\'"]
+
+  list:0:s -> mapped:0:n [label = "83.toChar"]
+  list:1:s -> mapped:1:n [label = "99.toChar"]
+  list:2:s -> mapped:2:n
+  list:3:s -> mapped:3:n
+  list:4:s -> mapped:4:n [label = "97.toChar"]
+}

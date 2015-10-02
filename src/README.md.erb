@@ -1,3 +1,6 @@
+<%- def includefile(file)
+  return File.open(File.dirname(__FILE__) + "/" + file, "rb").read
+end -%>
 
 Scala cheatsheet
 ================
@@ -12,8 +15,6 @@ Builds a new collection by applying a function to all elements of this sequence.
 ```scala
 def map[B](f: A ⇒ B): Seq[B]
 
-val list = List(83, 99, 97, 108, 97)
-list map { code => code.toChar } // List('S', 'c', 'a', 'l', 'a')
-
+<%= includefile("map.scala") %>
 ```
 ![graphical map](images/map.png)
