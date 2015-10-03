@@ -8,6 +8,19 @@ Scala cheatsheet
 Collections
 -----------
 
+### dropWhile
+
+Drops longest prefix of elements that satisfy a predicate.
+
+```scala
+def dropWhile(p: (A) ⇒ Boolean): Seq[A]
+
+<%= includefile("dropWhile.scala") %>
+```
+![graphical dropWhile](images/dropWhile.png)
+
+
+
 ### filter
 
 Selects all elements of this traversable collection which satisfy a predicate.
@@ -57,6 +70,32 @@ def partition(p: (A) ⇒ Boolean): (Seq[A], Seq[A])
 <%= includefile("partition.scala") %>
 ```
 ![graphical partition](images/partition.png)
+
+
+
+### span
+
+Splits this traversable collection into a prefix/suffix pair according to a predicate.
+
+```scala
+def span(p: (A) ⇒ Boolean): (Seq[A], Seq[A])
+
+<%= includefile("span.scala") %>
+```
+![graphical span](images/span.png)
+
+
+
+### takeWhile
+
+Takes longest prefix of elements that satisfy a predicate.
+
+```scala
+def takeWhile(p: (A) ⇒ Boolean): Seq[A]
+
+<%= includefile("takeWhile.scala") %>
+```
+![graphical takeWhile](images/takeWhile.png)
 
 
 

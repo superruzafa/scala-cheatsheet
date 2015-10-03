@@ -1,0 +1,37 @@
+digraph {
+  <%= File.open(File.dirname(__FILE__) + "/defaults.dot.inc", "rb").read %>
+
+  graph [
+    nodesep = 0.125
+  ]
+
+  list [label = "<0>4|<1>7|<2>2|<3>-3|<4>2|<5>-1|<6>8"]
+  {
+    rank = "same"
+    taken [label = "<0>4|<1>7|<2>2"]
+    notTaken [label = "<0>-3|<1>2|<2>-1|<3>8"]
+    node [
+      color = "transparent"
+      fontsize = 24
+      style = ""
+      width = 0
+      margin = 0
+    ]
+    op [label = "("]
+    comma [label = ","]
+    cp [label = ")"]
+  }
+
+  list:0:s -> taken:0:n [taillabel = "✓", shape = "none", fontcolor = "green3"]
+  list:1:s -> taken:1:n [taillabel = "✓", shape = "none", fontcolor = "green3"]
+  list:2:s -> taken:2:n [taillabel = "✓", shape = "none", fontcolor = "green3"]
+
+  list:3:s -> notTaken:0:n [taillabel = "✗", fontcolor = "red"]
+  list:4:s -> notTaken:1:n
+  list:5:s -> notTaken:2:n
+  list:6:s -> notTaken:3:n
+
+  edge [dir = "none", penwidth = 0]
+  op -> taken -> comma -> notTaken -> cp
+
+}

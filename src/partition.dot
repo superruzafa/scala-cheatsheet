@@ -15,6 +15,7 @@ digraph {
     node [
       color = "transparent"
       fontsize = 24
+      style = ""
       width = 0
       margin = 0
     ]

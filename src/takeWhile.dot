@@ -1,0 +1,13 @@
+digraph {
+  <%= File.open(File.dirname(__FILE__) + "/defaults.dot.inc", "rb").read %>
+
+  list [label = "<0>4|<1>7|<2>2|<3>-3|<4>2|<5>-1|<6>8"]
+  taken [label = "<0>4|<1>7|<2>2"]
+
+  notTaken [shape = "none", style = "", label = ""]
+
+  list:0:s -> taken:0:n [taillabel = "✓", shape = "none", fontcolor = "green3"]
+  list:1:s -> taken:1:n [taillabel = "✓", shape = "none", fontcolor = "green3"]
+  list:2:s -> taken:2:n [taillabel = "✓", shape = "none", fontcolor = "green3"]
+  list:3:s -> notTaken [taillabel = "✗", fontcolor = "red", dir = "none", color = "transparent"]
+}

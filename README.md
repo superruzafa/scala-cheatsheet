@@ -5,6 +5,21 @@ Scala cheatsheet
 Collections
 -----------
 
+### dropWhile
+
+Drops longest prefix of elements that satisfy a predicate.
+
+```scala
+def dropWhile(p: (A) ⇒ Boolean): Seq[A]
+
+val list = List(4, 7, 2, -3, 2, -1, 8)
+list dropWhile { n => n >= 0 } // List(-3, 2, -1, 8)
+
+```
+![graphical dropWhile](images/dropWhile.png)
+
+
+
 ### filter
 
 Selects all elements of this traversable collection which satisfy a predicate.
@@ -62,6 +77,36 @@ list partition { n => n % 2 == 0 } // ( List(8, -2, 6), List(3, 1) )
 
 ```
 ![graphical partition](images/partition.png)
+
+
+
+### span
+
+Splits this traversable collection into a prefix/suffix pair according to a predicate.
+
+```scala
+def span(p: (A) ⇒ Boolean): (Seq[A], Seq[A])
+
+val list = List(4, 7, 2, -3, 2, -1, 8)
+list span { n => n >= 0 } // ( List(4, 7, 2), List(-3, 2, -1, 8) )
+
+```
+![graphical span](images/span.png)
+
+
+
+### takeWhile
+
+Takes longest prefix of elements that satisfy a predicate.
+
+```scala
+def takeWhile(p: (A) ⇒ Boolean): Seq[A]
+
+val list = List(4, 7, 2, -3, 2, -1, 8)
+list takeWhile { n => n >= 0 } // List(4, 7, 2)
+
+```
+![graphical takeWhile](images/takeWhile.png)
 
 
 
