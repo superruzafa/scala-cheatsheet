@@ -1,6 +1,7 @@
 graph [
   splines = "false"
   pad = 0.1
+  bgcolor = "transparent"
 ]
 
 node [
@@ -8,6 +9,8 @@ node [
   fontname = "SourceSansPro"
   fontsize = 12
   fontcolor = "#333333"
+  fillcolor = "#ffffff"
+  style = "filled"
   margin = 0.125
   height = 0.4
   width = 0
