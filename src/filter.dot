@@ -1,0 +1,24 @@
+digraph {
+  <%= File.open(File.dirname(__FILE__) + "/defaults.dot.inc", "rb").read %>
+
+  splines = "true"
+  ranksep = 0.3
+  nodesep = 0.2
+
+  list [label = "<0>8|<1>3|<2>-2|<3>6|<4>1"]
+  filtered [label = "<0>8|<1>-2|<2>6", width = 1.8]
+
+  node[width = 0, margin = 0, height = 0]
+  omitted1 [label = "✗", shape = "none", fontcolor = "red"]
+  omitted2 [label = "✗", shape = "none", fontcolor = "red"]
+
+  list:0:s -> filtered:0:n [label = "✓", fontcolor = "green3", fontsize = 12]
+  list:1:s -> omitted1
+  list:2:s -> filtered:1:n [label = "✓", fontcolor = "green3", fontsize = 12]
+  list:3:s -> filtered:2:n [label = "✓", fontcolor = "green3", fontsize = 12]
+  list:4:s -> omitted2
+
+  edge [dir = "none", penwidth = 0]
+  omitted1 -> filtered:2
+  omitted2 -> filtered:1
+}

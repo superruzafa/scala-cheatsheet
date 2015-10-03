@@ -8,6 +8,32 @@ Scala cheatsheet
 Collections
 -----------
 
+### filter
+
+Selects all elements of this traversable collection which satisfy a predicate.
+
+```scala
+def filter(p: (A) ⇒ Boolean): Seq[A]
+
+<%= includefile("filter.scala") %>
+```
+![graphical filter](images/filter.png)
+
+
+
+### filterNot
+
+Selects all elements of this traversable collection which do not satisfy a predicate.
+
+```scala
+def filterNot(p: (A) ⇒ Boolean): Seq[A]
+
+<%= includefile("filterNot.scala") %>
+```
+![graphical filterNot](images/filterNot.png)
+
+
+
 ### map
 
 Builds a new collection by applying a function to all elements of this sequence.
@@ -18,6 +44,19 @@ def map[B](f: A ⇒ B): Seq[B]
 <%= includefile("map.scala") %>
 ```
 ![graphical map](images/map.png)
+
+
+
+### partition
+
+Partitions this traversable collection in two traversable collections according to a predicate.
+
+```scala
+def partition(p: (A) ⇒ Boolean): (Seq[A], Seq[A])
+
+<%= includefile("partition.scala") %>
+```
+![graphical partition](images/partition.png)
 
 
 

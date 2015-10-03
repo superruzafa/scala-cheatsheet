@@ -5,6 +5,36 @@ Scala cheatsheet
 Collections
 -----------
 
+### filter
+
+Selects all elements of this traversable collection which satisfy a predicate.
+
+```scala
+def filter(p: (A) ⇒ Boolean): Seq[A]
+
+val list = List(8, 3, -2, 6, 1)
+list filter { n => n % 2 == 0 } // List(8, -2, 6)
+
+```
+![graphical filter](images/filter.png)
+
+
+
+### filterNot
+
+Selects all elements of this traversable collection which do not satisfy a predicate.
+
+```scala
+def filterNot(p: (A) ⇒ Boolean): Seq[A]
+
+val list = List(8, 3, -2, 6, 1)
+list filterNot { n => n % 2 == 0 } // List(3, 1)
+
+```
+![graphical filterNot](images/filterNot.png)
+
+
+
 ### map
 
 Builds a new collection by applying a function to all elements of this sequence.
@@ -17,6 +47,21 @@ list map { code => code.toChar } // List('S', 'c', 'a', 'l', 'a')
 
 ```
 ![graphical map](images/map.png)
+
+
+
+### partition
+
+Partitions this traversable collection in two traversable collections according to a predicate.
+
+```scala
+def partition(p: (A) ⇒ Boolean): (Seq[A], Seq[A])
+
+val list = List(8, 3, -2, 6, 1)
+list partition { n => n % 2 == 0 } // ( List(8, -2, 6), List(3, 1) )
+
+```
+![graphical partition](images/partition.png)
 
 
 
