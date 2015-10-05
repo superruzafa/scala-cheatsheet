@@ -1,4 +1,5 @@
 
+
 Scala cheatsheet
 ================
 
@@ -77,6 +78,36 @@ list partition { n => n % 2 == 0 } // ( List(8, -2, 6), List(3, 1) )
 
 ```
 ![graphical partition](images/partition.png)
+
+
+
+### reduceLeft
+
+Applies a binary operator to all elements of this traversable or iterator, going left to right.
+
+```scala
+def reduceLeft[B >: A](op: (B, A) ⇒ B): B
+
+val list = List(8, 3, 5, 1, 2)
+list reduceLeft { (left, right) => left * 10 + right } // 83512
+
+```
+![graphical reduceLeft](images/reduceLeft.png)
+
+
+
+### reduceRight
+
+Applies a binary operator to all elements of this iterable collection, going right to left.
+
+```scala
+def reduceRight[B >: A](op: (A, B) ⇒ B): B
+
+val list = List(8, 3, 5, 1, 2)
+list reduceRight { (left, right) => left * 10 + right } // 172
+
+```
+![graphical reduceRight](images/reduceRight.png)
 
 
 

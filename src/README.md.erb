@@ -73,6 +73,32 @@ def partition(p: (A) ⇒ Boolean): (Seq[A], Seq[A])
 
 
 
+### reduceLeft
+
+Applies a binary operator to all elements of this traversable or iterator, going left to right.
+
+```scala
+def reduceLeft[B >: A](op: (B, A) ⇒ B): B
+
+<%= includefile("reduceLeft.scala") %>
+```
+![graphical reduceLeft](images/reduceLeft.png)
+
+
+
+### reduceRight
+
+Applies a binary operator to all elements of this iterable collection, going right to left.
+
+```scala
+def reduceRight[B >: A](op: (A, B) ⇒ B): B
+
+<%= includefile("reduceRight.scala") %>
+```
+![graphical reduceRight](images/reduceRight.png)
+
+
+
 ### span
 
 Splits this traversable collection into a prefix/suffix pair according to a predicate.
