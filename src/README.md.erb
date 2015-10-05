@@ -47,6 +47,32 @@ def filterNot(p: (A) ⇒ Boolean): Seq[A]
 
 
 
+### foldLeft
+
+Applies a binary operator to a start value and all elements of this traversable or iterator, going left to right.
+
+```scala
+def foldLeft[B](z: B)(op: (B, A) ⇒ B): B
+
+<%= includefile("foldLeft.scala") %>
+```
+![graphical foldLeft](images/foldLeft.png)
+
+
+
+### foldRight
+
+Applies a binary operator to all elements of this iterable collection and a start value, going right to left.
+
+```scala
+def foldRight[B](z: B)(op: (A, B) ⇒ B): B
+
+<%= includefile("foldRight.scala") %>
+```
+![graphical foldRight](images/foldRight.png)
+
+
+
 ### map
 
 Builds a new collection by applying a function to all elements of this sequence.

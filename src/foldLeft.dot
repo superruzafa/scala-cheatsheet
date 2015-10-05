@@ -1,0 +1,31 @@
+digraph {
+  <%= File.open(File.dirname(__FILE__) + "/defaults.dot.inc", "rb").read %>
+
+  graph [nodesep = 0, ranksep = 0]
+
+  list [label = "<0>83|<1>99|<2>97|<3>108|<4>97", width = 5]
+
+  node[shape = "none", style = "", width = 0, margin = 0, height = 0]
+  z [label = "\"\"", margin = "0.2,0", width = 0, height = 0]
+
+  it1 [label = "\"S\""]
+  it2 [label = "\"Sc\""]
+  it3 [label = "\"Sca\""]
+  it4 [label = "\"Scal\""]
+  it5 [label = "\"Scala\""]
+
+  z -> it1
+  list:0:s -> it1 [label = " \"\" + 83.toChar"]
+
+  it1 -> it2
+  list:1:s -> it2 [label = " \"S\" + 99.toChar"]
+
+  it2 -> it3
+  list:2:s -> it3 [label = " \"Sc\" + 97.toChar"]
+
+  it3 -> it4
+  list:3:s -> it4 [label = " \"Sca\" + 108.toChar"]
+
+  it4 -> it5
+  list:4:s -> it5 [label = " \"Scal\" + 97.toChar"]
+}

@@ -1,5 +1,4 @@
 
-
 Scala cheatsheet
 ================
 
@@ -48,6 +47,36 @@ list filterNot { n => n % 2 == 0 } // List(3, 1)
 
 ```
 ![graphical filterNot](images/filterNot.png)
+
+
+
+### foldLeft
+
+Applies a binary operator to a start value and all elements of this traversable or iterator, going left to right.
+
+```scala
+def foldLeft[B](z: B)(op: (B, A) ⇒ B): B
+
+val list = List(83, 99, 97, 108, 97)
+(list foldLeft "") { (acc, item) => acc + item.toChar } // "Scala"
+
+```
+![graphical foldLeft](images/foldLeft.png)
+
+
+
+### foldRight
+
+Applies a binary operator to all elements of this iterable collection and a start value, going right to left.
+
+```scala
+def foldRight[B](z: B)(op: (A, B) ⇒ B): B
+
+val list = List(83, 99, 97, 108, 97)
+(list foldRight "") { (item, acc) => acc + item.toChar } // "alacS"
+
+```
+![graphical foldRight](images/foldRight.png)
 
 
 
