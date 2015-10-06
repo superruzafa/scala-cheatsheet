@@ -125,6 +125,21 @@ def reduceRight[B >: A](op: (A, B) ⇒ B): B
 
 
 
+### sliding
+
+Groups elements in fixed size blocks by passing a "sliding window" over them (as opposed to partitioning them, as is done in grouped.) "Sliding window" step is 1 by default.
+
+```scala
+def sliding(size: Int): Iterator[Seq[A]]
+def sliding(size: Int, step: Int): Iterator[Seq[A]]
+
+<%= includefile("sliding.scala") %>
+```
+
+![graphical sliding](images/sliding.png)
+
+
+
 ### span
 
 Splits this traversable collection into a prefix/suffix pair according to a predicate.

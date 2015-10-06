@@ -1,0 +1,28 @@
+digraph {
+  <%= File.open(File.dirname(__FILE__) + "/defaults.dot.inc", "rb").read %>
+
+  graph [nodesep = 0.5]
+
+  list [label = "<0>1|<1>2|<2>3|<3>4|<4>5"]
+
+  {
+    rank = "same"
+    it1 [label = "<0>1|<1>2|<2>3"]
+    it2 [label = "<0>2|<1>3|<2>4"]
+    it3 [label = "<0>3|<1>4|<2>5"]
+  }
+
+  edge [dir = "none", style = "dashed"]
+  list:0:sw -> it1:nw
+  list:2:se -> it1:ne
+
+  list:1:sw -> it2:nw
+  list:3:se -> it2:ne
+
+  list:2:sw -> it3:nw
+  list:4:se -> it3:ne
+
+  edge [dir = "forward", style = "dotted"]
+  it1 -> it2 -> it3
+
+}

@@ -1,4 +1,5 @@
 
+
 Scala cheatsheet
 ================
 
@@ -73,7 +74,7 @@ Applies a binary operator to all elements of this iterable collection and a star
 def foldRight[B](z: B)(op: (A, B) ⇒ B): B
 
 val list = List(83, 99, 97, 108, 97)
-(list foldRight "") { (item, acc) => acc + item.toChar } // "alacS"
+(list foldRight "") { (item, acc) => acc + item.toChar } // "Scala"
 
 ```
 ![graphical foldRight](images/foldRight.png)
@@ -137,6 +138,23 @@ list reduceRight { (left, right) => left * 10 + right } // 172
 
 ```
 ![graphical reduceRight](images/reduceRight.png)
+
+
+
+### sliding
+
+Groups elements in fixed size blocks by passing a "sliding window" over them (as opposed to partitioning them, as is done in grouped.) "Sliding window" step is 1 by default.
+
+```scala
+def sliding(size: Int): Iterator[Seq[A]]
+def sliding(size: Int, step: Int): Iterator[Seq[A]]
+
+val list = List(1, 2, 3, 4, 5)
+list sliding 3 // Iterator( List(1, 2, 3), List(2, 3, 4), List(3, 4, 5) )
+
+```
+
+![graphical sliding](images/sliding.png)
 
 
 
