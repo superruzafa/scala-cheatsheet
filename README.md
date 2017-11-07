@@ -1,4 +1,4 @@
-
+👉🏻 **Please check out my improved version of this project at** https://superruzafa.github.io/visual-scala-reference
 
 Scala cheatsheet
 ================
